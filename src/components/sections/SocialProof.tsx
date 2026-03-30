@@ -5,7 +5,6 @@ export default function SocialProof() {
     {
       id: 1,
       author: 'Eduardo Kühn',
-      role: 'Mãe de João (9 anos)',
       text: 'Excelente escola! Cheguei sem saber absolutamente nada de violão e graças ao professor João hoje em dia já me divirto muito com a música! Gostamos tanto que hoje toda a família faz aulas na escola. Parabéns Lauro e Fabi, continuem assim!',
       instrument: 'Violão',
       videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
@@ -13,7 +12,6 @@ export default function SocialProof() {
     {
       id: 2,
       author: 'Pedro Costa',
-      role: 'Mãe de Ana (12 anos)',
       text: 'Procurávamos um lugar onde Ana pudesse aprender no seu ritmo. Aqui ela encontrou!',
       instrument: 'Piano',
       videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
@@ -21,7 +19,6 @@ export default function SocialProof() {
     {
       id: 3,
       author: 'Carlos Santos',
-      role: 'Mãe de Lucas (10 anos)',
       text: 'Excelente metodologia. Os professores realmente se importam com o progresso de cada aluno.',
       instrument: 'Bateria',
       videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
