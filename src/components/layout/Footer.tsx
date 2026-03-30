@@ -1,3 +1,5 @@
+import { FaInstagram, FaYoutube } from 'react-icons/fa';
+
 export default function Footer() {
   return (
     <footer
@@ -55,16 +57,20 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 title="Instagram"
+                aria-label="Instagram"
                 style={{ fontSize: '20px' }}
               >
-                <svg width="24" height="24" fill="currentColor">
-                  <use href="/icons.svg#instagram-icon"></use>
-                </svg>
+                <FaInstagram size={24} />
               </a>
-              <a href="#youtube" title="YouTube" style={{ fontSize: '20px' }}>
-                <svg width="24" height="24" fill="currentColor">
-                  <use href="/icons.svg#youtube-icon"></use>
-                </svg>
+              <a
+                href="https://youtube.com/@centromusicallb"
+                target="_blank"
+                rel="noopener noreferrer"
+                title="YouTube"
+                aria-label="YouTube"
+                style={{ fontSize: '20px' }}
+              >
+                <FaYoutube size={24} />
               </a>
             </div>
           </div>

@@ -16,27 +16,31 @@ export default function Hero() {
         overflow: 'hidden',
       }}
     >
-      {/* Background Video */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
+      <div
         style={{
           position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          opacity: 0.3,
+          top: '50%',
+          left: '50%',
+          width: 'max(177.78vh, 100vw)',
+          height: 'max(56.25vw, 100vh)',
+          transform: 'translate(-50%, -50%)',
+          opacity: 0.25,
           zIndex: 0,
+          pointerEvents: 'none',
         }}
       >
-        <source src="/video/hero-background.mp4" type="video/mp4" />
-        {/* Fallback for browsers that don't support video */}
-        Seu navegador não suporta o elemento de vídeo.
-      </video>
+        <iframe
+          src="https://www.youtube.com/embed/1ZqvyVVzG4Y?autoplay=1&mute=1&loop=1&playlist=1ZqvyVVzG4Y&controls=0&showinfo=0&modestbranding=1&playsinline=1"
+          style={{
+            width: '100%',
+            height: '100%',
+            border: 'none',
+          }}
+          allow="autoplay; encrypted-media"
+          title="Hero background video"
+          loading="eager"
+        />
+      </div>
 
       {/* Background overlay with parallax effect */}
       <motion.div
@@ -53,14 +57,8 @@ export default function Hero() {
       />
 
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: 'var(--spacing-2xl)',
-            alignItems: 'center',
-          }}
-        >
+        <div className="grid-2-col">
+
           {/* Content */}
           <motion.div
             initial={!prefersReducedMotion ? { opacity: 0, x: -40 } : {}}
@@ -111,17 +109,20 @@ export default function Hero() {
             </motion.button>
           </motion.div>
 
-          {/* Image/Placeholder with parallax */}
+          {/* Video showcase */}
           <motion.div
+            className="hero-video-showcase"
             style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              height: '400px',
-              backgroundColor: 'var(--bg-surface)',
+              height: '480px',
+              maxWidth: '270px',
+              margin: '0 auto',
               borderRadius: 'var(--radius-lg)',
               border: '2px solid var(--glass-border)',
               position: 'relative',
+              overflow: 'hidden',
             }}
             initial={!prefersReducedMotion ? { opacity: 0, x: 40 } : {}}
             animate={!prefersReducedMotion ? { opacity: 1, x: 0 } : {}}
@@ -132,17 +133,27 @@ export default function Hero() {
                 : {}
             }
           >
-            <p style={{ color: 'var(--text-muted)', fontSize: '18px' }}>
-              [Vídeo/Imagem do Hero]
-            </p>
+            <iframe
+              src="https://www.youtube.com/embed/1ZqvyVVzG4Y?playsinline=1"
+              style={{
+                width: '100%',
+                height: '100%',
+                border: 'none',
+              }}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title="Centro Musical LB"
+              loading="lazy"
+            />
           </motion.div>
         </div>
       </div>
 
       <style>{`
         @media (max-width: 768px) {
-          [style*="gridTemplateColumns: 1fr 1fr"] {
-            grid-template-columns: 1fr !important;
+          .hero-video-showcase {
+            height: 400px !important;
+            max-width: 220px !important;
           }
         }
       `}</style>

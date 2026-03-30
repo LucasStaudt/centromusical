@@ -138,25 +138,6 @@ export default function TestimonialCarousel({
             <p style={{ fontSize: '14px', marginBottom: '4px' }}>
               {currentTestimonial.role}
             </p>
-            <p
-              style={{
-                fontSize: '14px',
-                color: 'var(--brand-yellow)',
-                marginBottom: 'var(--spacing-md)',
-              }}
-            >
-              Aprende: {currentTestimonial.instrument}
-            </p>
-
-            {currentTestimonial.videoUrl && (
-              <button
-                className="btn-secondary"
-                onClick={() => handleWatchVideo(currentTestimonial.videoUrl)}
-                style={{ width: '100%' }}
-              >
-                ▶ Assistir
-              </button>
-            )}
           </div>
         </motion.div>
 

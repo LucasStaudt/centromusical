@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { FaInstagram, FaYoutube } from 'react-icons/fa';
+import { HiVolumeUp, HiVolumeOff } from 'react-icons/hi';
 import { useScrollSpy } from '../../hooks/useScrollSpy';
 import { useSoundEnabled } from '../../hooks/useSoundEnabled';
 import styles from './Navbar.module.css';
@@ -85,25 +87,26 @@ export default function Navbar() {
             href="https://instagram.com/centromusicallb"
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              color: 'var(--text-primary)',
-              fontSize: '20px',
-              marginRight: 'var(--spacing-md)',
-              transition: 'color var(--transition-normal)',
-            }}
+            className={styles.socialLink}
             aria-label="Siga-nos no Instagram"
             title="Instagram"
-            onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--brand-yellow)')}
-            onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
           >
-            <svg width="20" height="20" fill="currentColor">
-              <use href="/icons.svg#instagram-icon"></use>
-            </svg>
+            <FaInstagram size={20} />
+          </a>
+          <a
+            href="https://youtube.com/@centromusicallb"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.socialLink}
+            aria-label="Nosso canal no YouTube"
+            title="YouTube"
+          >
+            <FaYoutube size={20} />
           </a>
           <button
             className={styles.soundToggle}
             onClick={() => setSoundEnabled(!soundEnabled)}
-            aria-label="Toggle sound"
+            aria-label={soundEnabled ? 'Desativar som' : 'Ativar som'}
             title={soundEnabled ? 'Som ativado' : 'Som desativado'}
             style={{
               color: soundEnabled
@@ -111,7 +114,7 @@ export default function Navbar() {
                 : 'var(--text-muted)',
             }}
           >
-            {soundEnabled ? '🔊' : '🔇'}
+            {soundEnabled ? <HiVolumeUp size={20} /> : <HiVolumeOff size={20} />}
           </button>
 
           <button

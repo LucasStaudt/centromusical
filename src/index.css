@@ -173,6 +173,59 @@ button {
   text-align: center;
 }
 
+/* Responsive Grids */
+.grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-2xl);
+  align-items: center;
+}
+
+.grid-3-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+}
+
+.grid-courses {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+}
+
+@media (max-width: 1024px) {
+  .grid-courses {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-2-col {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-3-col {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-courses {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    min-height: auto;
+    padding: var(--spacing-2xl) 0;
+  }
+
+  h1 {
+    font-size: clamp(36px, 8vw, 52px);
+  }
+
+  h2 {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+}
+
 /* Animations */
 @media (prefers-reduced-motion: reduce) {
   *,

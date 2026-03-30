@@ -117,11 +117,7 @@ export default function Courses() {
           variants={prefersReducedMotion ? {} : container}
           initial={prefersReducedMotion ? 'visible' : 'hidden'}
           whileInView="visible"
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: 'var(--spacing-xl)',
-          }}
+          className="grid-courses"
         >
           {instruments.map((instrument) => (
             <motion.div
@@ -129,7 +125,7 @@ export default function Courses() {
               variants={prefersReducedMotion ? {} : item}
               className="glass"
               style={{
-                padding: 'var(--spacing-xl)',
+                padding: 'var(--spacing-lg)',
                 cursor: 'pointer',
                 transition: 'all var(--transition-normal)',
               }}

@@ -44,11 +44,21 @@
 
 .soundToggle {
   font-size: 20px;
-  display: none;
 }
 
 .soundToggle:hover {
   transform: scale(1.1);
+}
+
+.socialLink {
+  color: var(--text-primary);
+  transition: color var(--transition-normal);
+  display: flex;
+  align-items: center;
+}
+
+.socialLink:hover {
+  color: var(--brand-yellow);
 }
 
 .hamburger {
@@ -103,7 +113,10 @@
     display: none;
   }
 
-  .soundToggle,
+  .socialLink {
+    display: none;
+  }
+
   .hamburger {
     display: flex;
   }

@@ -1,3 +1,4 @@
+import { FaWhatsapp } from 'react-icons/fa';
 import LeadForm from '../ui/LeadForm';
 
 export default function Contact() {
@@ -5,22 +6,19 @@ export default function Contact() {
     <section
       className="section"
       style={{
-        minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
       }}
     >
       <div className="container">
-        <h2 style={{ textAlign: 'center', marginBottom: 'var(--spacing-2xl)' }}>
+        <h2 style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)' }}>
           Agende Sua Aula Experimental
         </h2>
 
         <div
+          className="grid-2-col"
           style={{
-            display: 'grid',
-            gridTemplateColumns: '1fr 1fr',
-            gap: 'var(--spacing-2xl)',
             maxWidth: '1000px',
             margin: '0 auto',
           }}
@@ -59,11 +57,13 @@ export default function Contact() {
             <div>
               <h3 style={{ marginBottom: 'var(--spacing-md)' }}>Contato</h3>
               <a
-                href="https://wa.me/555512345678"
+                href="https://wa.me/5551999999999?text=Olá! Gostaria de agendar uma Aula Experimental."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}
               >
+                <FaWhatsapp size={20} />
                 Enviar WhatsApp
               </a>
             </div>
@@ -71,13 +71,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 768px) {
-          [style*="gridTemplateColumns: 1fr 1fr"] {
-            grid-template-columns: 1fr !important;
-          }
-        }
-      `}</style>
+
     </section>
   );
 }

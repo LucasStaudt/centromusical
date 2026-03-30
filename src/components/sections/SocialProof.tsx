@@ -4,9 +4,9 @@ export default function SocialProof() {
   const testimonials = [
     {
       id: 1,
-      author: 'Maria Silva',
+      author: 'Eduardo Kühn',
       role: 'Mãe de João (9 anos)',
-      text: 'Meu filho ficou mais confiante e começou a se interessar por música. As aulas individualizadas fazem toda a diferença!',
+      text: 'Excelente escola! Cheguei sem saber absolutamente nada de violão e graças ao professor João hoje em dia já me divirto muito com a música! Gostamos tanto que hoje toda a família faz aulas na escola. Parabéns Lauro e Fabi, continuem assim!',
       instrument: 'Violão',
       videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     },
@@ -32,26 +32,18 @@ export default function SocialProof() {
     {
       id: 1,
       name: 'Professor João',
-      instrument: 'Guitarra & Violão',
-      bio: '15 anos de experiência com crianças',
-      instagram: '#',
-      youtube: '#',
+      instrument: 'Todos os instrumentos',
+      bio: 'Ensinando todas as idades a tocarem seus instrumentos favoritos',
     },
     {
       id: 2,
-      name: 'Professora Ana',
-      instrument: 'Piano & Teclado',
-      bio: '12 anos ensinando música',
-      instagram: '#',
-      youtube: '#',
+      name: 'Professor/Diretor Lauro',
+      instrument: 'Bateria & Violão',
+      bio: 'Musica é para todos, e ele prova isso com seus alunos de todas as idades',
     },
     {
       id: 3,
-      name: 'Professor Carlos',
-      instrument: 'Bateria & Percussão',
-      bio: '10 anos com alunos juvenis',
-      instagram: '#',
-      youtube: '#',
+      name: 'Diretora Fabi',
     },
   ];
 
@@ -67,7 +59,6 @@ export default function SocialProof() {
       }}
     >
       <div className="container">
-        {/* Testimonials Section */}
         <div style={{ marginBottom: 'var(--spacing-2xl)' }}>
           <h2 style={{ textAlign: 'center', marginBottom: 'var(--spacing-2xl)' }}>
             O que Dizem Nossos Pais
@@ -75,18 +66,12 @@ export default function SocialProof() {
           <TestimonialCarousel testimonials={testimonials} />
         </div>
 
-        {/* Teachers Section */}
         <div>
           <h2 style={{ textAlign: 'center', marginBottom: 'var(--spacing-2xl)' }}>
             Conheça Nossos Professores
           </h2>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: 'var(--spacing-xl)',
-            }}
-          >
+          <div className="grid-3-col">
+
             {teachers.map((teacher) => (
               <div
                 key={teacher.id}
@@ -132,28 +117,6 @@ export default function SocialProof() {
                     gap: 'var(--spacing-md)',
                   }}
                 >
-                  <a
-                    href={teacher.instagram}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ fontSize: '20px' }}
-                    title="Instagram"
-                  >
-                    <svg width="20" height="20" fill="currentColor">
-                      <use href="/icons.svg#instagram-icon"></use>
-                    </svg>
-                  </a>
-                  <a
-                    href={teacher.youtube}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{ fontSize: '20px' }}
-                    title="YouTube"
-                  >
-                    <svg width="20" height="20" fill="currentColor">
-                      <use href="/icons.svg#youtube-icon"></use>
-                    </svg>
-                  </a>
                 </div>
               </div>
             ))}
