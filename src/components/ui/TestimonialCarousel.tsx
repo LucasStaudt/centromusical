@@ -138,6 +138,23 @@ export default function TestimonialCarousel({
             <p style={{ fontSize: '14px', marginBottom: '4px' }}>
               {currentTestimonial.role}
             </p>
+            {currentTestimonial.videoUrl && (
+              <button
+                onClick={() => handleWatchVideo(currentTestimonial.videoUrl)}
+                style={{
+                  marginTop: '8px',
+                  padding: '8px 12px',
+                  borderRadius: '6px',
+                  border: '1px solid var(--brand-yellow)',
+                  backgroundColor: 'transparent',
+                  color: 'var(--brand-yellow)',
+                  cursor: 'pointer',
+                }}
+                aria-label="Assistir vídeo do depoimento"
+              >
+                Assistir vídeo
+              </button>
+            )}
           </div>
         </motion.div>
 
