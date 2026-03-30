@@ -57,10 +57,14 @@ export default function Footer() {
                 title="Instagram"
                 style={{ fontSize: '20px' }}
               >
-                📷
+                <svg width="24" height="24" fill="currentColor">
+                  <use href="/icons.svg#instagram-icon"></use>
+                </svg>
               </a>
               <a href="#youtube" title="YouTube" style={{ fontSize: '20px' }}>
-                ▶️
+                <svg width="24" height="24" fill="currentColor">
+                  <use href="/icons.svg#youtube-icon"></use>
+                </svg>
               </a>
             </div>
           </div>

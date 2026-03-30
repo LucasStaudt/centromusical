@@ -96,7 +96,9 @@ export default function Navbar() {
             onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--brand-yellow)')}
             onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-primary)')}
           >
-            📷
+            <svg width="20" height="20" fill="currentColor">
+              <use href="/icons.svg#instagram-icon"></use>
+            </svg>
           </a>
           <button
             className={styles.soundToggle}

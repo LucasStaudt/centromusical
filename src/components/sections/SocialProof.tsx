@@ -139,7 +139,9 @@ export default function SocialProof() {
                     style={{ fontSize: '20px' }}
                     title="Instagram"
                   >
-                    📷
+                    <svg width="20" height="20" fill="currentColor">
+                      <use href="/icons.svg#instagram-icon"></use>
+                    </svg>
                   </a>
                   <a
                     href={teacher.youtube}
@@ -148,7 +150,9 @@ export default function SocialProof() {
                     style={{ fontSize: '20px' }}
                     title="YouTube"
                   >
-                    ▶️
+                    <svg width="20" height="20" fill="currentColor">
+                      <use href="/icons.svg#youtube-icon"></use>
+                    </svg>
                   </a>
                 </div>
               </div>
