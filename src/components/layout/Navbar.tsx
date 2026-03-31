@@ -3,7 +3,7 @@ import { FaInstagram, FaYoutube } from 'react-icons/fa';
 import { HiVolumeUp, HiVolumeOff } from 'react-icons/hi';
 import { useScrollSpy } from '../../hooks/useScrollSpy';
 import { useSoundEnabled } from '../../hooks/useSoundEnabled';
-import icon from '../../assets/images/icon.png';
+import icon from '../../assets/images/icone.png';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
