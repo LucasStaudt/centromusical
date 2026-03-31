@@ -61,7 +61,7 @@ export default function Contact() {
               <iframe
                 src="https://maps.google.com/maps?q=Av.%20Jos%C3%A9%20Gertum%20490%20Ch%C3%A1cara%20das%20Pedras%20Porto%20Alegre%20RS%2091330-450&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
-                height="300"
+                height="500"
                 style={{
                   border: '1px solid var(--glass-border)',
                   borderRadius: 'var(--radius-lg)',

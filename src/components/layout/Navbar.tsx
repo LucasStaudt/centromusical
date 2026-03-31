@@ -3,6 +3,7 @@ import { FaInstagram, FaYoutube } from 'react-icons/fa';
 import { HiVolumeUp, HiVolumeOff } from 'react-icons/hi';
 import { useScrollSpy } from '../../hooks/useScrollSpy';
 import { useSoundEnabled } from '../../hooks/useSoundEnabled';
+import icone from '../../assets/images/icone.png';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
@@ -43,21 +44,37 @@ export default function Navbar() {
         backgroundColor: isScrolled ? 'rgba(10, 10, 10, 0.95)' : 'transparent',
         backdropFilter: isScrolled ? 'blur(10px)' : 'none',
         borderBottom: isScrolled ? '1px solid var(--glass-border)' : 'none',
+        padding: isScrolled ? '8px var(--spacing-lg)' : '16px var(--spacing-lg)',
+        transition: 'all 0.3s ease',
+        opacity: isScrolled ? 1 : 0.95,
       }}
     >
       <div className={styles.container}>
         {/* Logo */}
-        <div
+        <button
           className={styles.logo}
+          onClick={() => scrollToSection('hero')}
           style={{
-            fontFamily: 'var(--font-headline)',
-            fontWeight: 900,
-            fontSize: '24px',
-            color: 'var(--brand-yellow)',
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            padding: 0,
+            display: 'flex',
+            alignItems: 'center',
+            transition: 'all 0.3s ease',
           }}
+          aria-label="Centro Musical LB"
         >
-          LB
-        </div>
+          <img 
+            src={icone} 
+            alt="Centro Musical LB Logo" 
+            style={{
+              height: isScrolled ? '32px' : '40px',
+              width: 'auto',
+              transition: 'all 0.3s ease',
+            }}
+          />
+        </button>
 
         {/* Desktop Menu */}
         <ul className={styles.menu}>

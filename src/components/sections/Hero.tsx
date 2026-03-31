@@ -24,7 +24,7 @@ export default function Hero() {
           width: 'max(177.78vh, 100vw)',
           height: 'max(56.25vw, 100vh)',
           transform: 'translate(-50%, -50%)',
-          opacity: 0.25,
+          opacity: 0.12,
           zIndex: 0,
           pointerEvents: 'none',
         }}
