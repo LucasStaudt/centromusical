@@ -3,7 +3,7 @@ import { FaInstagram, FaYoutube } from 'react-icons/fa';
 import { HiVolumeUp, HiVolumeOff } from 'react-icons/hi';
 import { useScrollSpy } from '../../hooks/useScrollSpy';
 import { useSoundEnabled } from '../../hooks/useSoundEnabled';
-import icone from '../../assets/images/icone.png';
+import icon from '../../assets/images/icon.png';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
@@ -66,7 +66,7 @@ export default function Navbar() {
           aria-label="Centro Musical LB"
         >
           <img 
-            src={icone} 
+            src={icon} 
             alt="Centro Musical LB Logo" 
             style={{
               height: isScrolled ? '32px' : '40px',

@@ -43,7 +43,7 @@ export default function Mission() {
               fontStyle: 'italic',
             }}
           >
-            "Cada criança tem um ritmo. A nossa missão é encontrar o dela e desenvolvê-la através da música."
+            "Cada pessoa tem um ritmo. A nossa missão é encontrar o dela e desenvolvê-la através da música."
           </blockquote>
 
           <div

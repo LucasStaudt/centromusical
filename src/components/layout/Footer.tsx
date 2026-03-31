@@ -63,7 +63,7 @@ export default function Footer() {
                 <FaInstagram size={24} />
               </a>
               <a
-                href="https://youtube.com/@centromusicallb"
+                href="https://youtube.com/@centromusicallaurobaungard5393"
                 target="_blank"
                 rel="noopener noreferrer"
                 title="YouTube"

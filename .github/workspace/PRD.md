@@ -119,7 +119,6 @@ Criar uma LP single-scroll, visualmente excepcional, que:
 #### Seção 02 — The Why
 - **Layout:** Coluna única centralizada, texto largo, margem generosa
 - **Componente:** "Founder's Note" — foto do fundador à esquerda, citação em blockquote estilizado
-- **Tom (primário — fala com os pais):** Confiança e cuidado — _"Cada criança tem um ritmo. A nossa missão é encontrar o dela."_
 - **Tom (secundário — adultos):** Emocional — _"Nunca é tarde para começar."_
 - **Proof points visuais:** Número de alunos, anos de experiência, destaques do modelo individual ("Nenhum aluno igual ao outro")
 - **Animação:** Texto entra via fade-in conforme scroll (Framer Motion `whileInView`)
