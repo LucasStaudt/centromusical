@@ -30,7 +30,7 @@ export default function Hero() {
         }}
       >
         <iframe
-          src="https://www.youtube.com/embed/1ZqvyVVzG4Y?autoplay=1&mute=1&loop=1&playlist=1ZqvyVVzG4Y&controls=0&showinfo=0&modestbranding=1&playsinline=1&start=3"
+          src="https://www.youtube-nocookie.com/embed/1ZqvyVVzG4Y?autoplay=1&mute=1&loop=1&playlist=1ZqvyVVzG4Y&controls=0&showinfo=0&modestbranding=1&playsinline=1&start=3"
           style={{
             width: '100%',
             height: '100%',
@@ -42,19 +42,16 @@ export default function Hero() {
         />
       </div>
 
-      {/* Background overlay with parallax effect */}
-      <motion.div
+      {/* Background overlay — static, no animation to avoid stalling on slow GPUs */}
+      <div
         style={{
           position: 'absolute',
           inset: 0,
           background:
-            'linear-gradient(135deg, rgba(10, 10, 10, 0.7) 0%, rgba(255, 214, 0, 0.1) 100%)',
+            'linear-gradient(135deg, rgba(10, 10, 10, 0.75) 0%, rgba(255, 214, 0, 0.08) 100%)',
           pointerEvents: 'none',
           zIndex: 1
         }}
-        initial={!prefersReducedMotion ? { opacity: 0 } : {}}
-        animate={!prefersReducedMotion ? { opacity: 1 } : {}}
-        transition={{ duration: 0.8 }}
       />
 
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
@@ -110,7 +107,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Video showcase */}
-          <motion.div
+          <div
             className="hero-video-showcase"
             style={{
               display: 'flex',
@@ -122,22 +119,13 @@ export default function Hero() {
               borderRadius: 'var(--radius-lg)',
               border: '2px solid var(--glass-border)',
               position: 'relative',
-              overflow: 'hidden'
+              overflow: 'hidden',
+              transform: 'translateZ(0)',
+              isolation: 'isolate'
             }}
-            initial={!prefersReducedMotion ? { opacity: 0, x: 40 } : {}}
-            animate={!prefersReducedMotion ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            whileHover={
-              !prefersReducedMotion
-                ? {
-                    scale: 1.02,
-                    boxShadow: '0 20px 40px rgba(255, 214, 0, 0.1)'
-                  }
-                : {}
-            }
           >
             <iframe
-              src="https://www.youtube.com/embed/PmYLalpiKCM?si=FRb8V7RMtoJtAmb9"
+              src="https://www.youtube-nocookie.com/embed/PmYLalpiKCM?si=FRb8V7RMtoJtAmb9"
               style={{
                 width: '100%',
                 height: '100%',
@@ -148,7 +136,7 @@ export default function Hero() {
               title="Centro Musical LB"
               loading="lazy"
             />
-          </motion.div>
+          </div>
         </div>
       </div>
 

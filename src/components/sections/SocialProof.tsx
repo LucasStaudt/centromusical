@@ -7,21 +7,21 @@ export default function SocialProof() {
       author: 'Eduardo Kühn',
       text: 'Excelente escola! Cheguei sem saber absolutamente nada de violão e graças ao professor João hoje em dia já me divirto muito com a música! Gostamos tanto que hoje toda a família faz aulas na escola. Parabéns Lauro e Fabi, continuem assim!',
       instrument: 'Violão',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      videoUrl: 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ',
     },
     {
       id: 2,
       author: 'Pedro Costa',
       text: 'Procurávamos um lugar onde Ana pudesse aprender no seu ritmo. Aqui ela encontrou!',
       instrument: 'Piano',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      videoUrl: 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ',
     },
     {
       id: 3,
       author: 'Carlos Santos',
       text: 'Excelente metodologia. Os professores realmente se importam com o progresso de cada aluno.',
       instrument: 'Bateria',
-      videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+      videoUrl: 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ',
     },
   ];
 

@@ -91,7 +91,7 @@ export default function Courses() {
   }
 
   const container = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 1 },
     visible: {
       opacity: 1,
       transition: {
