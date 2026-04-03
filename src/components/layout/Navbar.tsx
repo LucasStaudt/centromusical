@@ -1,41 +1,42 @@
-import { useEffect, useState } from 'react';
-import { FaInstagram, FaYoutube } from 'react-icons/fa';
-import { HiVolumeUp, HiVolumeOff } from 'react-icons/hi';
-import { useScrollSpy } from '../../hooks/useScrollSpy';
-import { useSoundEnabled } from '../../hooks/useSoundEnabled';
-import icon from '../../assets/images/icone.png';
-import styles from './Navbar.module.css';
+import { useEffect, useState } from 'react'
+import { FaInstagram, FaYoutube } from 'react-icons/fa'
+import { useScrollSpy } from '../../hooks/useScrollSpy'
+import icon from '../../assets/images/icon.png'
+import styles from './Navbar.module.css'
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const activeSection = useScrollSpy();
-  const [soundEnabled, setSoundEnabled] = useSoundEnabled();
+  const [isOpen, setIsOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const activeSection = useScrollSpy()
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 80);
-    };
+      if (!isScrolled && window.scrollY > 80) {
+        setIsScrolled(true)
+      } else if (isScrolled && window.scrollY < 20) {
+        setIsScrolled(false)
+      }
+    }
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [isScrolled])
 
   const menuItems = [
     { id: 'hero', label: 'Início' },
     { id: 'mission', label: 'Sobre' },
     { id: 'courses', label: 'Instrumentos' },
     { id: 'social-proof', label: 'Depoimentos' },
-    { id: 'contact', label: 'Contato' },
-  ];
+    { id: 'contact', label: 'Contato' }
+  ]
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
+    const element = document.getElementById(id)
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false);
+      element.scrollIntoView({ behavior: 'smooth' })
+      setIsOpen(false)
     }
-  };
+  }
 
   return (
     <nav
@@ -44,9 +45,11 @@ export default function Navbar() {
         backgroundColor: isScrolled ? 'rgba(10, 10, 10, 0.95)' : 'transparent',
         backdropFilter: isScrolled ? 'blur(10px)' : 'none',
         borderBottom: isScrolled ? '1px solid var(--glass-border)' : 'none',
-        padding: isScrolled ? '8px var(--spacing-lg)' : '16px var(--spacing-lg)',
+        padding: isScrolled
+          ? '8px var(--spacing-lg)'
+          : '16px var(--spacing-lg)',
         transition: 'all 0.3s ease',
-        opacity: isScrolled ? 1 : 0.95,
+        opacity: isScrolled ? 1 : 0.95
       }}
     >
       <div className={styles.container}>
@@ -61,17 +64,17 @@ export default function Navbar() {
             padding: 0,
             display: 'flex',
             alignItems: 'center',
-            transition: 'all 0.3s ease',
+            transition: 'all 0.3s ease'
           }}
           aria-label="Centro Musical LB"
         >
-          <img 
-            src={icon} 
-            alt="Centro Musical LB Logo" 
+          <img
+            src={icon}
+            alt="Centro Musical LB Logo"
             style={{
               height: isScrolled ? '32px' : '40px',
               width: 'auto',
-              transition: 'all 0.3s ease',
+              transition: 'all 0.3s ease'
             }}
           />
         </button>
@@ -88,8 +91,9 @@ export default function Navbar() {
                     activeSection === item.id
                       ? 'var(--brand-yellow)'
                       : 'var(--text-primary)',
-                  textDecoration: activeSection === item.id ? 'underline' : 'none',
-                  transition: 'all var(--transition-normal)',
+                  textDecoration:
+                    activeSection === item.id ? 'underline' : 'none',
+                  transition: 'all var(--transition-normal)'
                 }}
               >
                 {item.label}
@@ -121,20 +125,6 @@ export default function Navbar() {
             <FaYoutube size={20} />
           </a>
           <button
-            className={styles.soundToggle}
-            onClick={() => setSoundEnabled(!soundEnabled)}
-            aria-label={soundEnabled ? 'Desativar som' : 'Ativar som'}
-            title={soundEnabled ? 'Som ativado' : 'Som desativado'}
-            style={{
-              color: soundEnabled
-                ? 'var(--brand-yellow)'
-                : 'var(--text-muted)',
-            }}
-          >
-            {soundEnabled ? <HiVolumeUp size={20} /> : <HiVolumeOff size={20} />}
-          </button>
-
-          <button
             className={styles.hamburger}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
@@ -157,7 +147,7 @@ export default function Navbar() {
                 color:
                   activeSection === item.id
                     ? 'var(--brand-yellow)'
-                    : 'var(--text-primary)',
+                    : 'var(--text-primary)'
               }}
             >
               {item.label}
@@ -166,5 +156,5 @@ export default function Navbar() {
         </div>
       )}
     </nav>
-  );
+  )
 }

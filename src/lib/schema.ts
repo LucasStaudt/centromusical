@@ -9,14 +9,11 @@ export function generateMusicSchemaJSON() {
       streetAddress: 'Av. José Gertun',
       addressLocality: 'Porto Alegre',
       addressRegion: 'RS',
-      addressCountry: 'BR',
+      addressCountry: 'BR'
     },
-    telephone: '+55 (51) 1234-5678',
+    telephone: '+55 (51) 81027996',
     url: 'https://centromusicallb.com.br',
-    openingHours: [
-      'Tu-Fr 09:00-20:00',
-      'Sa 09:00-17:00',
-    ],
-    priceRange: 'R$',
-  };
+    openingHours: ['Tu-Fr 09:00-20:00', 'Sa 09:00-17:00'],
+    priceRange: 'R$'
+  }
 }

@@ -42,14 +42,6 @@
   align-items: center;
 }
 
-.soundToggle {
-  font-size: 20px;
-}
-
-.soundToggle:hover {
-  transform: scale(1.1);
-}
-
 .socialLink {
   color: var(--text-primary);
   transition: color var(--transition-normal);

@@ -1,8 +1,8 @@
-import { motion } from 'framer-motion';
-import { useReducedMotion } from '../../hooks/useReducedMotion';
+import { motion } from 'framer-motion'
+import { useReducedMotion } from '../../hooks/useReducedMotion'
 
 export default function Hero() {
-  const prefersReducedMotion = useReducedMotion();
+  const prefersReducedMotion = useReducedMotion()
 
   return (
     <div
@@ -13,7 +13,7 @@ export default function Hero() {
         justifyContent: 'center',
         backgroundColor: 'var(--bg-primary)',
         position: 'relative',
-        overflow: 'hidden',
+        overflow: 'hidden'
       }}
     >
       <div
@@ -26,15 +26,15 @@ export default function Hero() {
           transform: 'translate(-50%, -50%)',
           opacity: 0.12,
           zIndex: 0,
-          pointerEvents: 'none',
+          pointerEvents: 'none'
         }}
       >
         <iframe
-          src="https://www.youtube.com/embed/1ZqvyVVzG4Y?autoplay=1&mute=1&loop=1&playlist=1ZqvyVVzG4Y&controls=0&showinfo=0&modestbranding=1&playsinline=1"
+          src="https://www.youtube.com/embed/1ZqvyVVzG4Y?autoplay=1&mute=1&loop=1&playlist=1ZqvyVVzG4Y&controls=0&showinfo=0&modestbranding=1&playsinline=1&start=3"
           style={{
             width: '100%',
             height: '100%',
-            border: 'none',
+            border: 'none'
           }}
           allow="autoplay; encrypted-media"
           title="Hero background video"
@@ -47,9 +47,10 @@ export default function Hero() {
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(135deg, rgba(10, 10, 10, 0.7) 0%, rgba(255, 214, 0, 0.1) 100%)',
+          background:
+            'linear-gradient(135deg, rgba(10, 10, 10, 0.7) 0%, rgba(255, 214, 0, 0.1) 100%)',
           pointerEvents: 'none',
-          zIndex: 1,
+          zIndex: 1
         }}
         initial={!prefersReducedMotion ? { opacity: 0 } : {}}
         animate={!prefersReducedMotion ? { opacity: 1 } : {}}
@@ -58,7 +59,6 @@ export default function Hero() {
 
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div className="grid-2-col">
-
           {/* Content */}
           <motion.div
             initial={!prefersReducedMotion ? { opacity: 0, x: -40 } : {}}
@@ -69,7 +69,7 @@ export default function Hero() {
               style={{
                 fontSize: 'clamp(52px, 10vw, 80px)',
                 marginBottom: 'var(--spacing-lg)',
-                lineHeight: 1.1,
+                lineHeight: 1.1
               }}
             >
               Domine seu instrumento, no seu ritmo.
@@ -79,7 +79,7 @@ export default function Hero() {
                 fontSize: '18px',
                 marginBottom: 'var(--spacing-xl)',
                 color: 'var(--text-muted)',
-                maxWidth: '500px',
+                maxWidth: '500px'
               }}
               initial={!prefersReducedMotion ? { opacity: 0 } : {}}
               animate={!prefersReducedMotion ? { opacity: 1 } : {}}
@@ -102,7 +102,7 @@ export default function Hero() {
               whileHover={!prefersReducedMotion ? { scale: 1.05 } : {}}
               whileTap={!prefersReducedMotion ? { scale: 0.95 } : {}}
               style={{
-                minHeight: '56px',
+                minHeight: '56px'
               }}
             >
               Agendar Aula Experimental
@@ -122,14 +122,17 @@ export default function Hero() {
               borderRadius: 'var(--radius-lg)',
               border: '2px solid var(--glass-border)',
               position: 'relative',
-              overflow: 'hidden',
+              overflow: 'hidden'
             }}
             initial={!prefersReducedMotion ? { opacity: 0, x: 40 } : {}}
             animate={!prefersReducedMotion ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={
               !prefersReducedMotion
-                ? { scale: 1.02, boxShadow: '0 20px 40px rgba(255, 214, 0, 0.1)' }
+                ? {
+                    scale: 1.02,
+                    boxShadow: '0 20px 40px rgba(255, 214, 0, 0.1)'
+                  }
                 : {}
             }
           >
@@ -138,7 +141,7 @@ export default function Hero() {
               style={{
                 width: '100%',
                 height: '100%',
-                border: 'none',
+                border: 'none'
               }}
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
@@ -158,5 +161,5 @@ export default function Hero() {
         }
       `}</style>
     </div>
-  );
+  )
 }

@@ -1,32 +1,43 @@
-import { useState } from 'react';
+import { useState } from 'react'
+import { WHATSAPP_NUMBER } from '../../lib/constants'
 
 export default function LeadForm() {
   const [formData, setFormData] = useState({
     name: '',
     whatsapp: '',
     instrument: '',
-    objective: '',
-  });
+    objective: ''
+  })
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
+  ) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    const message = `Olá! Me chamo ${formData.name}, tenho interesse em aulas de ${formData.instrument}. ${formData.objective}`;
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappNumber = formData.whatsapp.replace(/\D/g, '');
-    const whatsappUrl = `https://wa.me/55${whatsappNumber}?text=${encodedMessage}`;
+    const message = `Olá! Me chamo ${formData.name}, tenho interesse em aulas de ${formData.instrument}. ${formData.objective}`
+    const encodedMessage = encodeURIComponent(message)
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`
 
-    window.open(whatsappUrl, '_blank');
-    setFormData({ name: '', whatsapp: '', instrument: '', objective: '' });
-  };
+    window.open(whatsappUrl, '_blank')
+    setFormData({ name: '', whatsapp: '', instrument: '', objective: '' })
+  }
 
   return (
-    <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-md)' }}>
+    <form
+      onSubmit={handleSubmit}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 'var(--spacing-md)'
+      }}
+    >
       <input
         type="text"
         name="name"
@@ -40,7 +51,7 @@ export default function LeadForm() {
           border: '1px solid var(--glass-border)',
           borderRadius: 'var(--radius-md)',
           color: 'var(--text-primary)',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-body)'
         }}
       />
 
@@ -57,7 +68,7 @@ export default function LeadForm() {
           border: '1px solid var(--glass-border)',
           borderRadius: 'var(--radius-md)',
           color: 'var(--text-primary)',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-body)'
         }}
       />
 
@@ -72,7 +83,7 @@ export default function LeadForm() {
           border: '1px solid var(--glass-border)',
           borderRadius: 'var(--radius-md)',
           color: 'var(--text-primary)',
-          fontFamily: 'var(--font-body)',
+          fontFamily: 'var(--font-body)'
         }}
       >
         <option value="">Selecione um instrumento</option>
@@ -97,7 +108,7 @@ export default function LeadForm() {
           borderRadius: 'var(--radius-md)',
           color: 'var(--text-primary)',
           fontFamily: 'var(--font-body)',
-          resize: 'vertical',
+          resize: 'vertical'
         }}
       />
 
@@ -105,5 +116,5 @@ export default function LeadForm() {
         Enviar via WhatsApp
       </button>
     </form>
-  );
+  )
 }

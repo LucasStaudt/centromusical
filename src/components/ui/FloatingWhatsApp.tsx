@@ -1,11 +1,12 @@
-import { motion } from 'framer-motion';
-import { FaWhatsapp } from 'react-icons/fa';
-import { useReducedMotion } from '../../hooks/useReducedMotion';
+import { motion } from 'framer-motion'
+import { FaWhatsapp } from 'react-icons/fa'
+import { useReducedMotion } from '../../hooks/useReducedMotion'
+import { whatsappUrl } from '../../lib/constants'
 
 export default function FloatingWhatsApp() {
-  const prefersReducedMotion = useReducedMotion();
+  const prefersReducedMotion = useReducedMotion()
 
-  const whatsappUrl = 'https://wa.me/5551999999999?text=Olá! Gostaria de agendar uma aula experimental.';
+  const url = whatsappUrl()
 
   return (
     <motion.div
@@ -13,7 +14,7 @@ export default function FloatingWhatsApp() {
         position: 'fixed',
         bottom: '24px',
         right: '24px',
-        zIndex: 1000,
+        zIndex: 1000
       }}
       initial={!prefersReducedMotion ? { scale: 0, opacity: 0 } : {}}
       animate={!prefersReducedMotion ? { scale: 1, opacity: 1 } : {}}
@@ -24,28 +25,27 @@ export default function FloatingWhatsApp() {
         <motion.div
           style={{
             position: 'absolute',
-            top: '50%',
-            left: '50%',
+            top: 0,
+            left: 0,
             width: '64px',
             height: '64px',
             borderRadius: '50%',
-            backgroundColor: 'rgba(37, 211, 102, 0.3)',
-            transform: 'translate(-50%, -50%)',
+            backgroundColor: 'rgba(37, 211, 102, 0.3)'
           }}
           animate={{
             scale: [1, 1.3, 1],
-            opacity: [0.5, 0, 0.5],
+            opacity: [0.5, 0, 0.5]
           }}
           transition={{
             duration: 2,
             repeat: Infinity,
-            ease: 'easeInOut',
+            ease: 'easeInOut'
           }}
         />
       )}
 
       <motion.a
-        href={whatsappUrl}
+        href={url}
         target="_blank"
         rel="noopener noreferrer"
         style={{
@@ -59,23 +59,27 @@ export default function FloatingWhatsApp() {
           boxShadow: '0 6px 18px rgba(37, 211, 102, 0.4)',
           color: '#fff',
           position: 'relative',
-          zIndex: 1,
+          zIndex: 1
         }}
         whileHover={!prefersReducedMotion ? { scale: 1.1 } : {}}
         whileTap={!prefersReducedMotion ? { scale: 0.92 } : {}}
-        animate={!prefersReducedMotion ? {
-          boxShadow: [
-            '0 6px 18px rgba(37, 211, 102, 0.4)',
-            '0 8px 24px rgba(37, 211, 102, 0.6)',
-            '0 6px 18px rgba(37, 211, 102, 0.4)',
-          ],
-        } : {}}
+        animate={
+          !prefersReducedMotion
+            ? {
+                boxShadow: [
+                  '0 6px 18px rgba(37, 211, 102, 0.4)',
+                  '0 8px 24px rgba(37, 211, 102, 0.6)',
+                  '0 6px 18px rgba(37, 211, 102, 0.4)'
+                ]
+              }
+            : {}
+        }
         transition={{
           boxShadow: {
             duration: 1.5,
             repeat: Infinity,
-            ease: 'easeInOut',
-          },
+            ease: 'easeInOut'
+          }
         }}
         aria-label="Fale conosco no WhatsApp"
         title="Fale conosco no WhatsApp"
@@ -83,5 +87,5 @@ export default function FloatingWhatsApp() {
         <FaWhatsapp size={32} />
       </motion.a>
     </motion.div>
-  );
+  )
 }

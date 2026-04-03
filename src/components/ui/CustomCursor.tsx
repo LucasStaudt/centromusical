@@ -50,6 +50,10 @@ style.textContent = `
     body {
       cursor: none !important;
     }
+
+    a, button, [role="button"], input[type="submit"], select, label[for], .btn-primary, .btn-secondary {
+      cursor: pointer !important;
+    }
   }
 `;
 document.head.appendChild(style);
