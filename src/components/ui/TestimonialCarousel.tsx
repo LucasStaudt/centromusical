@@ -106,8 +106,8 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
                 src={currentTestimonial.photoUrl}
                 alt={`Foto de ${currentTestimonial.author}`}
                 style={{
-                  width: '50px',
-                  height: '50px',
+                  width: '80px',
+                  height: '80px',
                   borderRadius: '50%',
                   objectFit: 'cover',
                 }}

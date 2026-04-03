@@ -16,31 +16,6 @@ export default function Hero() {
         overflow: 'hidden'
       }}
     >
-      <div
-        style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          width: 'max(177.78vh, 100vw)',
-          height: 'max(56.25vw, 100vh)',
-          transform: 'translate(-50%, -50%)',
-          opacity: 0.12,
-          zIndex: 0,
-          pointerEvents: 'none'
-        }}
-      >
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/1ZqvyVVzG4Y?autoplay=1&mute=1&loop=1&playlist=1ZqvyVVzG4Y&controls=0&showinfo=0&modestbranding=1&playsinline=1&start=3"
-          style={{
-            width: '100%',
-            height: '100%',
-            border: 'none'
-          }}
-          allow="autoplay; encrypted-media"
-          title="Hero background video"
-          loading="eager"
-        />
-      </div>
 
       {/* No overlay — background is already dark (#0a0a0a) */}
 
@@ -101,7 +76,7 @@ export default function Hero() {
               alignItems: 'center',
               justifyContent: 'center',
               height: '480px',
-              maxWidth: '270px',
+              maxWidth: '400px',
               margin: '0 auto',
               borderRadius: 'var(--radius-lg)',
               border: '2px solid var(--glass-border)',
@@ -112,7 +87,7 @@ export default function Hero() {
             }}
           >
             <iframe
-              src="https://www.youtube-nocookie.com/embed/PmYLalpiKCM?si=FRb8V7RMtoJtAmb9"
+              src="https://www.youtube-nocookie.com/embed/1ZqvyVVzG4Y?autoplay=1&mute=1&loop=1&playlist=1ZqvyVVzG4Y&controls=0&showinfo=0&modestbranding=1&playsinline=1&start=3"
               style={{
                 width: '100%',
                 height: '100%',
@@ -131,7 +106,7 @@ export default function Hero() {
         @media (max-width: 768px) {
           .hero-video-showcase {
             height: 400px !important;
-            max-width: 220px !important;
+            max-width: 320px !important;
           }
         }
       `}</style>

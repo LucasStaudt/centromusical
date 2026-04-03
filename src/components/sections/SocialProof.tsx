@@ -5,6 +5,9 @@ import aluno3 from '../../assets/images/aluno3.png';
 import aluno4 from '../../assets/images/aluno4.png';
 import aluno5 from '../../assets/images/aluno5.png';
 import aluno6 from '../../assets/images/aluno6.png';
+import professor1 from '../../assets/images/professor1.png';
+import professor2 from '../../assets/images/professor2.png';
+import professor3 from '../../assets/images/professor3.png';
 
 export default function SocialProof() {
   const testimonials = [
@@ -52,16 +55,19 @@ export default function SocialProof() {
       name: 'Professor João',
       instrument: 'Todos os instrumentos',
       bio: 'Ensinando todas as idades a tocarem seus instrumentos favoritos',
+      photoUrl: professor2,
     },
     {
       id: 2,
       name: 'Professor/Diretor Lauro',
       instrument: 'Bateria & Violão',
       bio: 'Musica é para todos, e ele prova isso com seus alunos de todas as idades',
+      photoUrl: professor1,
     },
     {
       id: 3,
       name: 'Diretora Fabi',
+      photoUrl: professor3,
     },
   ];
 
@@ -84,15 +90,17 @@ export default function SocialProof() {
           
           {/* Google Rating */}
           <div style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)' }}>
-            <div className="glass" style={{ display: 'inline-block', padding: 'var(--spacing-md)' }}>
-              <p style={{ margin: 0, fontWeight: 600 }}>Avaliação no Google</p>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px', marginTop: '4px' }}>
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} style={{ color: 'var(--brand-yellow)', fontSize: '20px' }}>★</span>
-                ))}
-                <span style={{ marginLeft: '8px', fontWeight: 600 }}>5.0</span>
+            <a href="https://search.google.com/local/reviews?placeid=ChIJ0TjFzOp3GZURI4FdTQj9rfU" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+              <div className="glass" style={{ display: 'inline-block', padding: 'var(--spacing-md)', cursor: 'pointer' }}>
+                <p style={{ margin: 0, fontWeight: 600 }}>Avaliação no Google</p>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px', marginTop: '4px' }}>
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} style={{ color: 'var(--brand-yellow)', fontSize: '20px' }}>★</span>
+                  ))}
+                  <span style={{ marginLeft: '8px', fontWeight: 600 }}>5.0</span>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
           
           <TestimonialCarousel testimonials={testimonials} />
@@ -124,9 +132,23 @@ export default function SocialProof() {
                     alignItems: 'center',
                     justifyContent: 'center',
                     fontSize: '32px',
+                    overflow: 'hidden',
                   }}
                 >
-                  🎵
+                  {teacher.photoUrl ? (
+                    <img
+                      src={teacher.photoUrl}
+                      alt={`Foto de ${teacher.name}`}
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        borderRadius: '50%',
+                      }}
+                    />
+                  ) : (
+                    '🎵'
+                  )}
                 </div>
                 <h3 style={{ marginBottom: 'var(--spacing-sm)' }}>
                   {teacher.name}

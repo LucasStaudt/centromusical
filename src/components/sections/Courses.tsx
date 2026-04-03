@@ -50,9 +50,9 @@ const instruments = [
 
 const additionalCourses = [
   { id: 'exam', label: '📋 Preparatório para Prova Específica' },
-  { id: 'theory', label: '🎼 Teoria Musical' },
   { id: 'musicalization', label: '🌟 Musicalização Infantil e Adulto' },
-  { id: 'production', label: '🎛️ Produção e Criação em Softwares Musicais' }
+  { id: 'production', label: '🎛️ Produção e Criação em Softwares Musicais' },
+  { id: 'theory', label: '🎼 Teoria Musical' },
 ]
 
 export default function Courses() {
