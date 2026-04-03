@@ -91,18 +91,17 @@ export default function Courses() {
   }
 
   const container = {
-    hidden: { opacity: 1 },
+    hidden: {},
     visible: {
-      opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.08
       }
     }
   }
 
   const item = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 }
+    hidden: { y: 16 },
+    visible: { y: 0, transition: { duration: 0.35 } }
   }
 
   return (
@@ -133,8 +132,9 @@ export default function Courses() {
 
         <motion.div
           variants={prefersReducedMotion ? {} : container}
-          initial={prefersReducedMotion ? 'visible' : 'hidden'}
+          initial="hidden"
           whileInView="visible"
+          viewport={{ once: true, amount: 0 }}
           className="grid-courses"
         >
           {instruments.map((instrument) => (
@@ -162,49 +162,49 @@ export default function Courses() {
                 {instrument.icon}
               </div>
               <div className="card-course-body">
-              <h3 style={{ marginBottom: 'var(--spacing-sm)' }}>
-                {instrument.name}
-              </h3>
-              <p style={{ marginBottom: 'var(--spacing-md)' }}>
-                {instrument.description}
-              </p>
-              <div
-                style={{
-                  display: 'flex',
-                  gap: 'var(--spacing-sm)',
-                  marginBottom: 'var(--spacing-md)'
-                }}
-              >
-                <span
+                <h3 style={{ marginBottom: 'var(--spacing-sm)' }}>
+                  {instrument.name}
+                </h3>
+                <p style={{ marginBottom: 'var(--spacing-md)' }}>
+                  {instrument.description}
+                </p>
+                <div
                   style={{
-                    backgroundColor: 'var(--brand-yellow-muted)',
-                    color: 'var(--brand-yellow)',
-                    padding: '4px 8px',
-                    borderRadius: 'var(--radius-sm)',
-                    fontSize: '12px',
-                    fontWeight: 600
+                    display: 'flex',
+                    gap: 'var(--spacing-sm)',
+                    marginBottom: 'var(--spacing-md)'
                   }}
                 >
-                  Aula Individual
-                </span>
-              </div>
-              {soundEnabled && (
-                <div className="sound-hint">
-                  {playingId === instrument.id
-                    ? '▶ Tocando...'
-                    : '🔊 Passe o mouse'}
+                  <span
+                    style={{
+                      backgroundColor: 'var(--brand-yellow-muted)',
+                      color: 'var(--brand-yellow)',
+                      padding: '4px 8px',
+                      borderRadius: 'var(--radius-sm)',
+                      fontSize: '12px',
+                      fontWeight: 600
+                    }}
+                  >
+                    Aula Individual
+                  </span>
                 </div>
-              )}
-              <button
-                className="btn-secondary"
-                onClick={() => {
-                  const contactSection = document.getElementById('contact')
-                  contactSection?.scrollIntoView({ behavior: 'smooth' })
-                }}
-                style={{ width: '100%' }}
-              >
-                Quero aprender
-              </button>
+                {soundEnabled && (
+                  <div className="sound-hint">
+                    {playingId === instrument.id
+                      ? '▶ Tocando...'
+                      : '🔊 Passe o mouse'}
+                  </div>
+                )}
+                <button
+                  className="btn-secondary"
+                  onClick={() => {
+                    const contactSection = document.getElementById('contact')
+                    contactSection?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                  style={{ width: '100%' }}
+                >
+                  Quero aprender
+                </button>
               </div>
             </motion.div>
           ))}

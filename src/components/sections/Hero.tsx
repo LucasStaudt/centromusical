@@ -42,24 +42,14 @@ export default function Hero() {
         />
       </div>
 
-      {/* Background overlay — static, no animation to avoid stalling on slow GPUs */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background:
-            'linear-gradient(135deg, rgba(10, 10, 10, 0.75) 0%, rgba(255, 214, 0, 0.08) 100%)',
-          pointerEvents: 'none',
-          zIndex: 1
-        }}
-      />
+      {/* No overlay — background is already dark (#0a0a0a) */}
 
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div className="grid-2-col">
           {/* Content */}
           <motion.div
-            initial={!prefersReducedMotion ? { opacity: 0, x: -40 } : {}}
-            animate={!prefersReducedMotion ? { opacity: 1, x: 0 } : {}}
+            initial={!prefersReducedMotion ? { x: -40 } : {}}
+            animate={!prefersReducedMotion ? { x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
             <h1
@@ -78,9 +68,6 @@ export default function Hero() {
                 color: 'var(--text-muted)',
                 maxWidth: '500px'
               }}
-              initial={!prefersReducedMotion ? { opacity: 0 } : {}}
-              animate={!prefersReducedMotion ? { opacity: 1 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
             >
               Aulas individualizadas e personalizadas. Aprenda a música que você
               ama, com quem se importa com seu progresso.
@@ -93,8 +80,8 @@ export default function Hero() {
                   ?.scrollIntoView({ behavior: 'smooth' })
               }
               aria-label="Marcar aula experimental via WhatsApp"
-              initial={!prefersReducedMotion ? { opacity: 0, y: 20 } : {}}
-              animate={!prefersReducedMotion ? { opacity: 1, y: 0 } : {}}
+              initial={!prefersReducedMotion ? { y: 20 } : {}}
+              animate={!prefersReducedMotion ? { y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.4 }}
               whileHover={!prefersReducedMotion ? { scale: 1.05 } : {}}
               whileTap={!prefersReducedMotion ? { scale: 0.95 } : {}}
