@@ -53,20 +53,19 @@ export default function SocialProof() {
     {
       id: 1,
       name: 'Professor João',
-      instrument: 'Todos os instrumentos',
       bio: 'Ensinando todas as idades a tocarem seus instrumentos favoritos',
       photoUrl: professor2,
     },
     {
       id: 2,
       name: 'Professor/Diretor Lauro',
-      instrument: 'Bateria & Violão',
       bio: 'Musica é para todos, e ele prova isso com seus alunos de todas as idades',
       photoUrl: professor1,
     },
     {
       id: 3,
       name: 'Diretora Fabi',
+      bio: 'A alma do Centro Musical, garantindo que cada aluno se sinta em casa',
       photoUrl: professor3,
     },
   ];
@@ -153,15 +152,6 @@ export default function SocialProof() {
                 <h3 style={{ marginBottom: 'var(--spacing-sm)' }}>
                   {teacher.name}
                 </h3>
-                <p
-                  style={{
-                    color: 'var(--brand-yellow)',
-                    fontWeight: 600,
-                    marginBottom: 'var(--spacing-sm)',
-                  }}
-                >
-                  {teacher.instrument}
-                </p>
                 <p style={{ marginBottom: 'var(--spacing-md)' }}>{teacher.bio}</p>
 
                 <div
