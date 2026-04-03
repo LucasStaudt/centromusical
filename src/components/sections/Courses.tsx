@@ -211,8 +211,9 @@ export default function Courses() {
         </motion.div>
 
         <motion.div
-          initial={prefersReducedMotion ? {} : { opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={prefersReducedMotion ? {} : { y: 16 }}
+          whileInView={{ y: 0 }}
+          viewport={{ once: true, amount: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           style={{
             marginTop: 'var(--spacing-2xl)',

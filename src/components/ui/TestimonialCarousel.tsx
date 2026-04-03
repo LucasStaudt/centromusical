@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useReducedMotion } from '../../hooks/useReducedMotion';
 
 interface Testimonial {
@@ -20,21 +20,21 @@ const defaultTestimonials: Testimonial[] = [
     author: 'Maria Silva',
     text: 'Meu filho ficou mais confiante e começou a se interessar por música. As aulas individualizadas fazem toda a diferença!',
     instrument: 'Violão',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ',
   },
   {
     id: 2,
     author: 'Pedro Costa',
     text: 'Procurávamos um lugar onde Ana pudesse aprender no seu ritmo. Aqui ela encontrou!',
     instrument: 'Piano',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ',
   },
   {
     id: 3,
     author: 'Carlos Santos',
     text: 'Excelente metodologia. Os professores realmente se importam com o progresso de cada aluno.',
     instrument: 'Bateria',
-    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    videoUrl: 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ',
   },
 ];
 
@@ -87,6 +87,7 @@ export default function TestimonialCarousel({
         onMouseLeave={() => setIsAutoPlay(true)}
       >
         {/* Carousel Container */}
+        <AnimatePresence mode="wait" initial={false}>
         <motion.div
           key={currentTestimonial.id}
           initial={!prefersReducedMotion ? { opacity: 0 } : {}}
@@ -124,6 +125,7 @@ export default function TestimonialCarousel({
             </p>
           </div>
         </motion.div>
+        </AnimatePresence>
 
         {/* Navigation Arrows */}
         <button
