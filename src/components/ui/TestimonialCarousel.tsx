@@ -6,41 +6,19 @@ interface Testimonial {
   id: number;
   author: string;
   text: string;
-  instrument: string;
-  videoUrl?: string;
+  photoUrl?: string;
 }
 
 interface TestimonialCarouselProps {
-  testimonials?: Testimonial[];
+  testimonials: Testimonial[];
 }
 
-const defaultTestimonials: Testimonial[] = [
-  {
-    id: 1,
-    author: 'Maria Silva',
-    text: 'Meu filho ficou mais confiante e começou a se interessar por música. As aulas individualizadas fazem toda a diferença!',
-    instrument: 'Violão',
-    videoUrl: 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ',
-  },
-  {
-    id: 2,
-    author: 'Pedro Costa',
-    text: 'Procurávamos um lugar onde Ana pudesse aprender no seu ritmo. Aqui ela encontrou!',
-    instrument: 'Piano',
-    videoUrl: 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ',
-  },
-  {
-    id: 3,
-    author: 'Carlos Santos',
-    text: 'Excelente metodologia. Os professores realmente se importam com o progresso de cada aluno.',
-    instrument: 'Bateria',
-    videoUrl: 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ',
-  },
-];
 
-export default function TestimonialCarousel({
-  testimonials = defaultTestimonials,
-}: TestimonialCarouselProps) {
+export default function TestimonialCarousel({ testimonials }: TestimonialCarouselProps) {
+  if (!testimonials || testimonials.length === 0) {
+    return null;
+  }
+
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlay, setIsAutoPlay] = useState(true);
   const prefersReducedMotion = useReducedMotion();
@@ -118,11 +96,28 @@ export default function TestimonialCarousel({
             style={{
               borderTop: '1px solid var(--glass-border)',
               paddingTop: 'var(--spacing-md)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: 'var(--spacing-md)',
             }}
           >
-            <p style={{ fontWeight: 600, marginBottom: '4px' }}>
-              {currentTestimonial.author}
-            </p>
+            {currentTestimonial.photoUrl && (
+              <img
+                src={currentTestimonial.photoUrl}
+                alt={`Foto de ${currentTestimonial.author}`}
+                style={{
+                  width: '50px',
+                  height: '50px',
+                  borderRadius: '50%',
+                  objectFit: 'cover',
+                }}
+              />
+            )}
+            <div>
+              <p style={{ fontWeight: 600, marginBottom: '4px' }}>
+                {currentTestimonial.author}
+              </p>
+            </div>
           </div>
         </motion.div>
         </AnimatePresence>

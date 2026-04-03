@@ -43,7 +43,7 @@ export default function Mission() {
               fontStyle: 'italic',
             }}
           >
-            "Cada pessoa tem um ritmo. A nossa missão é encontrar o dela e desenvolvê-la através da música."
+            "Inspirado pelo sonho musical de meu pai, o Centro Musical LB existe para resgatar o seu. Criamos um espaço para que todos que adiaram o desejo de tocar um instrumento possam, finalmente, viver essa experiência. A música que você deixou para depois te espera agora. "
           </blockquote>
 
           <div

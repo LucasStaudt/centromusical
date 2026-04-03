@@ -1,27 +1,48 @@
 import TestimonialCarousel from '../ui/TestimonialCarousel';
+import aluno1 from '../../assets/images/aluno1.png';
+import aluno2 from '../../assets/images/aluno2.png';
+import aluno3 from '../../assets/images/aluno3.png';
+import aluno4 from '../../assets/images/aluno4.png';
+import aluno5 from '../../assets/images/aluno5.png';
+import aluno6 from '../../assets/images/aluno6.png';
 
 export default function SocialProof() {
   const testimonials = [
     {
       id: 1,
-      author: 'Eduardo Kühn',
-      text: 'Excelente escola! Cheguei sem saber absolutamente nada de violão e graças ao professor João hoje em dia já me divirto muito com a música! Gostamos tanto que hoje toda a família faz aulas na escola. Parabéns Lauro e Fabi, continuem assim!',
-      instrument: 'Violão',
-      videoUrl: 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ',
+      author: 'Laura',
+      text: 'Sem palavras para descrever o quanto sou fã do Centro Musical. conto os dias para as minhas aulas, são, sem dúvida, um dos melhores momentos da minha semana. O ambiente é super aconchegante, acolhedor e bem organizado. os equipamentos são de ótima qualidade, contribuindo ainda mais para uma experiência incrível. nota 10000! ',
+      photoUrl: aluno1,
     },
     {
       id: 2,
-      author: 'Pedro Costa',
-      text: 'Procurávamos um lugar onde Ana pudesse aprender no seu ritmo. Aqui ela encontrou!',
-      instrument: 'Piano',
-      videoUrl: 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ',
+      author: 'Marcelo',
+      text: 'Aulas particulares, estacionamento na porta, professores capacitados e ambiente descontraído. Entrei para aprender bateria e em dois meses já estava tocando!!😜 Recomendo!! ',
+      photoUrl: aluno2,
     },
     {
       id: 3,
-      author: 'Carlos Santos',
-      text: 'Excelente metodologia. Os professores realmente se importam com o progresso de cada aluno.',
-      instrument: 'Bateria',
-      videoUrl: 'https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ',
+      author: 'Júlia',
+      text: 'No Centro Musical eu esqueço os meus problemas! É muito bom tocar bateria e criar músicas! Recomendoo ',
+      photoUrl: aluno3,
+    },
+    {
+      id: 4,
+      author: 'Vitória',
+      text: 'A escola é maravilhosa! Amo o ambiente acolhedor e divertido. Todos são incríveis, em especial o profe João, que tem uma didática maravilhosa e nos desafia enquanto nos diverte. Me sinto parte de uma comunidade e não trocaria a escola por nada. ',
+      photoUrl: aluno4,
+    },
+    {
+      id: 5,
+      author: 'Sinval',
+      text: 'Fui fazer uma visita ao Centro Musical LB, gostei muito e já saí com a matrícula pronta. Estava precisando controlar minha ansiedade, hoje sou outra pessoa graças a centro musical. Ainda tenho a liberdade de passear por todos instrumentos 😝 ',
+      photoUrl: aluno5,
+    },
+    {
+      id: 6,
+      author: 'Eduardo',
+      text: 'Excelente escola! Cheguei sem saber absolutamente nada de violão e graças ao professor João hoje em dia já me divirto muito com a música! Gostamos tanto que hoje toda a família faz aulas na escola. Parabéns Lauro e Fabi, continuem assim! ',
+      photoUrl: aluno6,
     },
   ];
 
@@ -57,9 +78,23 @@ export default function SocialProof() {
     >
       <div className="container">
         <div style={{ marginBottom: 'var(--spacing-2xl)' }}>
-          <h2 style={{ textAlign: 'center', marginBottom: 'var(--spacing-2xl)' }}>
-            O que Dizem Nossos Pais
+          <h2 style={{ textAlign: 'center', marginBottom: 'var(--spacing-lg)' }}>
+            O que Dizem Nossos Alunos
           </h2>
+          
+          {/* Google Rating */}
+          <div style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)' }}>
+            <div className="glass" style={{ display: 'inline-block', padding: 'var(--spacing-md)' }}>
+              <p style={{ margin: 0, fontWeight: 600 }}>Avaliação no Google</p>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px', marginTop: '4px' }}>
+                {[...Array(5)].map((_, i) => (
+                  <span key={i} style={{ color: 'var(--brand-yellow)', fontSize: '20px' }}>★</span>
+                ))}
+                <span style={{ marginLeft: '8px', fontWeight: 600 }}>5.0</span>
+              </div>
+            </div>
+          </div>
+          
           <TestimonialCarousel testimonials={testimonials} />
         </div>
 
